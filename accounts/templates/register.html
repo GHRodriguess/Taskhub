@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <link rel="stylesheet" href="{%static 'accounts/css/auth.css'%}">
+    <link rel="stylesheet" href="{%static 'all/css/reset.css'%}">
+</head>
+<body>
+    <div class="content">
+        <div class="left-login">
+            <h1>TASKHUB</h1>
+            <img src="{% static 'accounts/src/programming-animate.svg' %}" class="left-login-image" alt="programming-animate">
+        </div>
+        <div class="right-login">
+            <div class="card-login {% if class %}{{ class }}{% endif %}">
+                <h1>REGISTRAR</h1>  
+                <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    <div class="textfield">
+                        <label for="username">Usuário</label>
+                        <input type="text" name="username" placeholder="Username" value="{% if username %}{{ username }}{% endif %}" required>
+                    </div>
+                    <div class="textfield">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="Email" value="{% if email %}{{ email }}{% endif %}" required>
+                    </div>                    
+                    <div class="textfield">
+                        <label for="password">Senha</label>
+                        <input type="password" name="password" placeholder="Senha" value="{% if password %}{{ password }}{% endif %}" required>
+                    </div>
+                        {% if message %}
+                        <p class="message {{ class }}">{{ message }}</p>
+                    {% else %}
+                        <br>
+                    {% endif%}
+                    <input class="btn-login" type="submit" value="Cadastrar">
+                </form>
+                <button class="btn-register"><a href="{% url 'login' %}">Já possui conta? Faça login</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    font-family: "Noto Sans", sans-serif;
+}
+
+.content{
+    width:100vw;
+    height: 100vh;
+    background-color: #201b2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login{    
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login > h1{    
+    color: #00ff88;
+    font-size: 3vw;
+    margin-bottom: 5vh;
+    font-weight: 900;
+    box-shadow: 0px 10px 40px #00b35f9f;
+}
+
+.left-login-image{   
+    width: 35vw;
+}
+
+.right-login{
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+}
+
+.card-login{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+    padding: 5vh 0px;
+    background-color: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    width: 80%;
+}
+
+.card-login > h1{
+    color: #00ff88;
+    font-weight: 800; 
+    font-size: 50px;  
+}
+
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;    
+    margin: 10px 0px;  
+}
+
+.textfield > input{
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #514869;
+    color: #f0f0ffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+    border-color: transparent;
+    transition: 0.3s;
+}
+
+.textfield > input:hover{
+    background-color: #3c354e;
+}
+
+
+
+.textfield > label{
+    color: #f0f0ffde;
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background-color: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+    transition: 0.3s;
+}
+
+.btn-login:hover{
+    background-color: #00d471;
+}
+
+.btn-register {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #00ff88; /* Adicione uma borda se necessário */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 60%;
+}
+
+.btn-register:hover {
+    background-color: #00ff88; /* Cor ao passar o mouse */
+    color: #2b134b;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+.btn-register a {
+    color: inherit; /* Herdar a cor do botão */
+    text-decoration: none;
+}
+
+.message{
+    color: #f0f0ffde;
+    font-size: 0.9vw;
+}

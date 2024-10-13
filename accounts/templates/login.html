@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{%static 'accounts/css/auth.css'%}">
+    <link rel="stylesheet" href="{%static 'all/css/reset.css'%}">
+</head>
+<body>
+    <div class="content">
+        
+        <div class="left-login">
+            <h1>TASKHUB</h1>
+            <img src="{% static 'accounts/src/programming-animate.svg' %}" class="left-login-image" alt="programming-animate">
+        </div>
+        <div class="right-login">
+            <div class="card-login {% if class %}{{ class }}{% endif %}">
+                <h1>LOGIN</h1>                
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}                   
+                    <div class="textfield">
+                        <label for="username">Usuário</label>
+                        <input type="text" name="username" value="{% if username %}{{ username }}{% endif %}" placeholder="Usuário">
+                    </div>
+                    <div class="textfield">
+                        <label for="password">Senha</label>
+                        <input type="password" name="password"  value="{% if password %}{{ password }}{% endif %}" placeholder="Senha">
+                    </div>
+                    {% if message %}
+                        <p class="message {{ class }}">{{ message }}</p>
+                    {% else %}
+                        <br>
+                    {% endif%}
+                    <input class="btn-login" type="submit" value="Logar">
+                </form>
+                <button class="btn-register"><a href="{% url 'register' %}">Não possui conta? Faça seu cadastro</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
