@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    font-family: "Noto Sans", sans-serif;
+}
+
+.navbar {
+    height: 7vh;
+    background-color: #201b2c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content{ 
+    height: 93vh;
+    background-color: #2f2841;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar > .title {
+    color: #ffffff;
+    font-size: 6vh;
+    margin-left: 20px;
+    font-weight: 15vh;
+    text-transform: uppercase;   
+    letter-spacing: 2px; 
+}
+
+.navbar > .logout {
+    background-color: transparent;
+    background-image: url("../src/logout.svg");
+    background-repeat: no-repeat;
+    background-size: 4vh 4vh;
+    width: 4vh;
+    height: 4vh;
+    border: none;
+    padding-right: 3%;
+    transition: 0.3s;
+}
+
+.navbar > .logout:hover {
+    background-color: transparent;
+    background-image: url("../src/logout_hover.svg");
+    background-repeat: no-repeat;
+    background-size: 4vh 4vh;
+    width: 4vh;
+    height: 4vh;
+    border: none;
+    padding-right: 3%;
+}
+
+.tasks{
+    display: flex;
+    flex-direction: column;
+    background-color: #201b2c;
+    height: 70%;
+    width: 30%;
+    border-radius: 20px;
+    padding: 2%
+}
+
+.form-field{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.div-title {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.div-title > .title {       
+    color: #ffffff;
+    font-size: 5vh;
+    font-weight: 10vh;
+    text-transform: uppercase;    
+    letter-spacing: 2px;    
+}
+
+.form{
+    margin-top: 1vh;
+    width: 100%;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    justify-content: center;    
+    margin: 10px 0px;  
+}
+
+
+.textfield > input {
+    width: 70%;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #514869;
+    color: #f0f0ffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+    border-color: transparent;
+    transition: 0.3s;
+    margin-right: 2%;
+}
+
+.textfield > input:hover{
+    background-color: #3c354e;
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+    font-size: 0.65vw;
+    font-weight: 700;
+}
+
+.textfield > .submit {
+    font-size: 0.65vw;
+    background-color: transparent;
+    color: white;
+    border: 2px solid #00ff88;     
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 20%;
+}
+
+.textfield > .submit:hover {
+    background-color: #00ff88; 
+    color: #2b134b;
+    box-shadow: 0px 10px 40px -12px #00000056;
+}
+
+.tasks-field {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: start;
+    width: 100%;
+    height: 100%;   
+    
+}
+
+.task-field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    width: 100%;
+    height: 10%;
+    padding: 2%;
+    background-color: #2f2841;
+    border: 2px solid #46464650;
+    border-radius: 10px;
+    margin: 1% 0;
+    box-shadow: 0px 10px 40px -12px #00000056;
+
+}
+
+.task-title{
+    color: #ffffff;
+    font-size: 0.7vw;
+    text-transform: uppercase;    
+}
+
+.actions{    
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+
+.completed {
+    background-image: url("../src/checkbox.svg");
+    transition: 0.3s;
+    width: 2vh;
+    height: 2vh;
+}
+
+.completed:hover {
+    background-image: url("../src/checkbox_hover.svg");
+}
+
+.delete {
+    background-image: url("../src/delete.svg");
+    transition: 0.3s;
+    width: 2vh;
+    height: 2vh;
+}
+
+.delete:hover {
+    background-image: url("../src/delete_hover.svg");
+}
+
+
+.message{ 
+    display: flex;
+    align-self: center;
+    text-transform: uppercase;
+    font-size: 0.65vw;
+    font-weight: 700;
+    letter-spacing: 1px;       
+}
+
+.task-none{
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.65vw;
+    font-weight: 700;
+    letter-spacing: 1px;   
+}
+
+.error {
+    color: #cf0d0d;    
+}
+
+.success{
+    color: #00ff88;
+}
