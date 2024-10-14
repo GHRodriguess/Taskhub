@@ -8,10 +8,10 @@ from .models import Task
 @login_required
 def tasks(request):     
     user = request.user.username
-    tasks = Task.objects.filter(user=user).order_by('id')    
+    tasks = Task.objects.filter(user=user, completed=False).order_by('id')    
 
     if request.method == 'GET':        
-        return render(request, 'tasks.html', {'tasks': tasks})
+        return render(request, 'tasks.html', {'tasks': tasks}) 
     elif request.method == 'POST':
         task = request.POST.get('task')   
         tasks_title = [task.title for task in tasks]
@@ -36,10 +36,18 @@ def logout(request):
 def delete(request, id):
     task = Task.objects.get(user=request.user, id=id)
     task.delete()
-    return redirect('tasks')
+    message = "Tarefa deletada com sucesso"
+    status = "success"
+    user = request.user.username
+    tasks = Task.objects.filter(user=user, completed=False).order_by('id')     
+    return render(request, 'tasks.html', {'tasks': tasks, "message": message, "status": status})
 
 def change_status(request, id):
     task = Task.objects.get(user=request.user, id=id)
     task.completed = not task.completed
     task.save()
-    return redirect('tasks')
+    message = "Status da tarefa atualizado com sucesso"
+    status = "success"      
+    user = request.user.username  
+    tasks = Task.objects.filter(user=user, completed=False).order_by('id')     
+    return render(request, 'tasks.html', {'tasks': tasks, "message": message, "status": status})

@@ -20,7 +20,7 @@
                 <div class="div-title">
                     <h1 class="title">Tasks</h1>
                 </div>
-                <form class='form' action="{% url 'tasks' %}" method="post">
+                <form class='form' action="{% url 'tasks'%}" method="post">
                     {% csrf_token %}
                     <div class="textfield">
                         <input type="text" name="task" placeholder="Tarefa" required>
@@ -41,7 +41,7 @@
                     {% endfor %}
                 {% else %}
                     <div class="task-field">
-                        <p class="task-none">Não foram criadas tarefas ainda.</p>
+                        <p class="task-none">Você não tem tarefas pendentes</p>
                     </div>
                 {% endif %}
             </div>
