@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'tasks/css/tasks.css'%}">
+    <link rel="stylesheet" href="{%static 'all/css/reset.css'%}">
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="title">Taskhub</h1>
+        <a href="{% url 'logout' %}" class="logout" type="button"></a>
+    </div>
+    <div class="content">
+        <div class="tasks">
+            <div class="form-field">
+                <div class="div-title">
+                    <h1 class="title">Tasks</h1>
+                </div>
+                <form class='form' action="{% url 'tasks'%}" method="post">
+                    {% csrf_token %}
+                    <div class="textfield">
+                        <input type="text" name="task" placeholder="Tarefa" required>
+                        <input class="submit" type="submit" value="Adicionar">
+                    </div>
+                </form>
+            </div>
+            <div class="tasks-field">
+                {% if tasks %}
+                    {% for task in tasks %}
+                        <div class="task-field">
+                            <p class="task-title">{{task.title}}</p>                        
+                            <div class="actions">
+                                <a href="{% url 'change_status' task.id %}" class="btn-actions completed"></a>
+                                <a href="{% url 'delete' task.id %}" class="btn-actions delete"></a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="task-field">
+                        <p class="task-none">Você não tem tarefas pendentes</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="message">
+                {% if message is not None %}
+                    <p class="message {{ status }}">{{ message }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
