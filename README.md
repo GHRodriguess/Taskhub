@@ -45,14 +45,7 @@ python manage.py runserver
 
 ### Acessando o site
 * Agora para acessar o projeto diretamente em um site, acesse:
-[https://ghrodriguess.pythonanywhere.com](https://ghrodriguess.pythonanywhere.com)
-
-## Como Contribuir
-* Fork o projeto.
-* Crie uma branch para sua feature (git checkout -b feature/sua-feature).
-* Commit suas alterações (git commit -m 'Adiciona nova feature').
-* Dê push na branch (git push origin feature/sua-feature).
-* Crie um pull request.
+[https://ghrodriguess.pythonanywhere.com](https://ghrodriguess.pythonanywhere.com).
 
  
 
